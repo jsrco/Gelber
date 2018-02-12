@@ -22,7 +22,7 @@ let SoundManager = {
       this.current = this.howls[id];
       let state = this.current.state();
 
-      if (state === 'loaded' || state === 'loading') {
+      if (state === 'loaded') {
         this.current.play();
       } else {
         // this.current.autoplay = true;
