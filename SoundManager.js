@@ -23,30 +23,26 @@ let SoundManager = {
       let state = this.current.state();
 
       if (state === 'loaded' && !this.current.playing()) {
-        console.log(this.current.seek())
         this.current.play();
       } else if (state === 'unloaded') {
         this.current.load();
       }
     },
     startMusic: function (id) {
-        console.log('START MUSIC')
-        if (this.current) {
-          if (this.current !== this.howls[id]) {
-            this.stop();
-          }
+        if (this.current && this.current !== this.howls[id]) {
+          this.stop();
         }
 
         this.play(id);
     },
     pause: function () {
-        console.log('PAUSE')
+        // console.log('PAUSE')
         if (this.current) {
           this.current.pause();
         }
     },
     stop: function () {
-        console.log('STOP')
+        // console.log('STOP')
         if (this.current) {
           this.current.stop();
           this.current = null;
