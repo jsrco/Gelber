@@ -1,4 +1,4 @@
-Howler.mobileAutoEnable = false;
+// Howler.mobileAutoEnable = false;
 document.addEventListener("DOMContentLoaded", function (event) {
     let title = null;
     let events = function (e) {
