@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
         let information = document.getElementById("infoPage");
         let infoText = document.getElementById("infoText");
         let infoText2 = document.getElementById("infoText2");
+        let warning = document.getElementById("warning");
+        let label = document.getElementById("label");
+        let labelText = document.getElementById("labelText");
         let iconBar = document.getElementById("iconBar");
         let fb = document.getElementById("fb");
         let insta = document.getElementById("insta");
@@ -43,6 +46,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
             songTitle.style.visibility = "visible";
             songTitle.innerHTML = "Click outside the info box to go back!";
         }
+        if (e.target === warning || e.target === label || e.target === labelText) {
+            toggleWarning(warning);
+        }
         if (e.target === banjo) {
             picContainer.style.visibility = "hidden";
             banjoPic.style.visibility = "visible";
@@ -58,101 +64,161 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
     };
 
+    let toggleWarning = function (element) {
+        element.style.visibility = "hidden";
+    };
 
     let SoundManager = {
         current: null,
         howls: {
+
+            s01: new Howl({
+                src: ['music/mp3/s01.mp3', 'music/webm/s01.webm'],
+                autoplay: false,
+                html5: true,
+                preload: false
+            }),
+
             s02: new Howl({
                 src: ['music/mp3/s02.mp3', 'music/webm/s02.webm'],
                 autoplay: false,
-                html5: true
+                html5: true,
+                preload: false
             }),
 
             s03: new Howl({
                 src: ['music/mp3/s03.mp3', 'music/webm/s03.webm'],
                 autoplay: false,
-                html5: true
+                html5: true,
+                preload: false
             }),
 
             s04: new Howl({
                 src: ['music/mp3/s04.mp3', 'music/webm/s04.webm'],
                 autoplay: false,
-                html5: true
+                html5: true,
+                preload: false
             }),
 
             s05: new Howl({
                 src: ['music/mp3/s05.mp3', 'music/webm/s05.webm'],
                 autoplay: false,
-                html5: true
+                html5: true,
+                preload: false
             }),
             s06: new Howl({
                 src: ['music/mp3/s06.mp3', 'music/webm/s06.webm'],
                 autoplay: false,
-                html5: true
+                html5: true,
+                preload: false
             }),
             s07: new Howl({
                 src: ['music/mp3/s07.mp3', 'music/webm/s07.webm'],
                 autoplay: false,
-                html5: true
+                html5: true,
+                preload: false
+            }),
+
+            s08: new Howl({
+                src: ['music/mp3/s08.mp3', 'music/webm/s08.webm'],
+                autoplay: false,
+                html5: true,
+                preload: false
             }),
 
             s09: new Howl({
                 src: ['music/mp3/s09.mp3', 'music/webm/s09.webm'],
                 autoplay: false,
-                html5: true
+                html5: true,
+                preload: false
             }),
 
             s10: new Howl({
                 src: ['music/mp3/s10.mp3', 'music/webm/s10.webm'],
                 autoplay: false,
-                html5: true
+                html5: true,
+                preload: false
             }),
 
             s11: new Howl({
                 src: ['music/mp3/s11.mp3', 'music/webm/s11.webm'],
                 autoplay: false,
-                html5: true
+                html5: true,
+                preload: false
             }),
 
             s12: new Howl({
                 src: ['music/mp3/s12.mp3', 'music/webm/s12.webm'],
                 autoplay: false,
-                html5: true
+                html5: true,
+                preload: false
             }),
 
+            s13: new Howl({
+                src: ['music/mp3/s13.mp3', 'music/webm/s13.webm'],
+                autoplay: false,
+                html5: true,
+                preload: false
+            }),
+
+            s14: new Howl({
+                src: ['music/mp3/s14.mp3', 'music/webm/s14.webm'],
+                autoplay: false,
+                html5: true,
+                preload: false
+            }),
             s15: new Howl({
                 src: ['music/mp3/s15.mp3', 'music/webm/s15.webm'],
                 autoplay: false,
-                html5: true
+                html5: true,
+                preload: false
             }),
             s16: new Howl({
                 src: ['music/mp3/s16.mp3', 'music/webm/s16.webm'],
                 autoplay: false,
-                html5: true
+                html5: true,
+                preload: false
             }),
             s17: new Howl({
                 src: ['music/mp3/s17.mp3', 'music/webm/s17.webm'],
                 autoplay: false,
-                html5: true
+                html5: true,
+                preload: false
             }),
 
             s18: new Howl({
                 src: ['music/mp3/s18.mp3', 'music/webm/s18.webm'],
                 autoplay: false,
-                html5: true
-            })
+                html5: true,
+                preload: false
+            }),
 
+            s19: new Howl({
+                src: ['music/mp3/s19.mp3', 'music/webm/s19.webm'],
+                autoplay: false,
+                html5: true,
+                preload: false
+            }),
+
+            s20: new Howl({
+                src: ['music/mp3/s20.mp3', 'music/webm/s20.webm'],
+                autoplay: false,
+                html5: true,
+                preload: false
+            })
         },
         startMusic: function (id) {
             if (this.current != null && this.current != this.howls[id]) {
                 this.stop();
                 this.current = null;
                 this.current = this.howls[id];
+                this.current.load();
                 this.current.autoplay = true;
                 this.current.play();
             } else if (this.current == null) {
                 this.current = null;
                 this.current = this.howls[id];
+                this.current.load();
                 this.current.autoplay = true;
                 this.current.play();
             } else if (this.current == this.howls[id] && this.current.playing() == false) {
