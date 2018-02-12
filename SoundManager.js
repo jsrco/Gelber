@@ -10,6 +10,7 @@ let SoundManager = {
         howls[id] = new Howl({
           src: ['music/mp3/' + id + '.mp3', 'music/webm/' + id + '.webm'],
           autoplay: true,
+          html5: true,
           preload: false
         })
       }
