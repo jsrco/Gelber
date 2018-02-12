@@ -6,9 +6,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         let information = document.getElementById("infoPage");
         let infoText = document.getElementById("infoText");
         let infoText2 = document.getElementById("infoText2");
-        let warning = document.getElementById("warning");
-        let label = document.getElementById("label");
-        let labelText = document.getElementById("labelText");
         let iconBar = document.getElementById("iconBar");
         let fb = document.getElementById("fb");
         let insta = document.getElementById("insta");
@@ -46,9 +43,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
             songTitle.style.visibility = "visible";
             songTitle.innerHTML = "Click outside the info box to go back!";
         }
-        if (e.target === warning || e.target === label || e.target === labelText) {
-            toggleWarning(warning);
-        }
         if (e.target === banjo) {
             picContainer.style.visibility = "hidden";
             banjoPic.style.visibility = "visible";
@@ -64,20 +58,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
     };
 
-    let toggleWarning = function (element) {
-        element.style.visibility = "hidden";
-    };
 
     let SoundManager = {
         current: null,
         howls: {
-
-            s01: new Howl({
-                src: ['music/mp3/s01.mp3', 'music/webm/s01.webm'],
-                autoplay: false,
-                html5: true
-            }),
-
             s02: new Howl({
                 src: ['music/mp3/s02.mp3', 'music/webm/s02.webm'],
                 autoplay: false,
@@ -112,12 +96,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 html5: true
             }),
 
-            s08: new Howl({
-                src: ['music/mp3/s08.mp3', 'music/webm/s08.webm'],
-                autoplay: false,
-                html5: true
-            }),
-
             s09: new Howl({
                 src: ['music/mp3/s09.mp3', 'music/webm/s09.webm'],
                 autoplay: false,
@@ -142,17 +120,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 html5: true
             }),
 
-            s13: new Howl({
-                src: ['music/mp3/s13.mp3', 'music/webm/s13.webm'],
-                autoplay: false,
-                html5: true
-            }),
-
-            s14: new Howl({
-                src: ['music/mp3/s14.mp3', 'music/webm/s14.webm'],
-                autoplay: false,
-                html5: true
-            }),
             s15: new Howl({
                 src: ['music/mp3/s15.mp3', 'music/webm/s15.webm'],
                 autoplay: false,
@@ -173,19 +140,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 src: ['music/mp3/s18.mp3', 'music/webm/s18.webm'],
                 autoplay: false,
                 html5: true
-            }),
-
-            s19: new Howl({
-                src: ['music/mp3/s19.mp3', 'music/webm/s19.webm'],
-                autoplay: false,
-                html5: true
-            }),
-
-            s20: new Howl({
-                src: ['music/mp3/s20.mp3', 'music/webm/s20.webm'],
-                autoplay: false,
-                html5: true
             })
+
         },
         startMusic: function (id) {
             if (this.current != null && this.current != this.howls[id]) {
