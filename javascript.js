@@ -2,8 +2,6 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     let title = null;
     let events = function (e) {
-        e.preventDefault();
-
         let info = document.getElementById("info");
         let information = document.getElementById("infoPage");
         let infoText = document.getElementById("infoText");
