@@ -11,6 +11,7 @@ let SoundManager = {
           src: ['music/mp3/' + id + '.mp3', 'music/webm/' + id + '.webm'],
           autoplay: true,
           html5: true,
+          id: id,
           preload: false
         })
       }
@@ -19,47 +20,26 @@ let SoundManager = {
     },
     howls: {},
     play: function (id) {
-      console.log('playing: ', id)
       this.current = this.howls[id];
       let state = this.current.state();
 
       if (state === 'loaded') {
         this.current.play();
       } else {
-        // this.current.autoplay = true;
         this.current.load();
       }
     },
     startMusic: function (id) {
-        this.stop();
-        this.play(id);
+        if (this.current && id !== this.current.id) {
+          this.stop();
+        }
 
-        // if (this.current != null && this.current != this.howls[id]) {
-        //   this.stop();
-        // }
-        // if (this.current != null && this.current != this.howls[id]) {
-        //     this.stop();
-        //     this.current = null;
-        //     this.current = this.howls[id];
-        //     this.playHowl(id);
-        // } else if (this.current == null) {
-        //     this.current = null;
-        //     this.current = this.howls[id];
-        //     this.playHowl(id);
-        // } else if (this.current == this.howls[id] && this.current.playing() == false) {
-        //     this.current.play();
-        // }
+        this.play(id);
     },
     pause: function () {
         if (this.current) {
           this.current.pause();
         }
-        // if (this.current == null) {
-        //     this.current = null;
-        //     title = null;
-        // } else {
-        //     this.current.pause();
-        // }
     },
     stop: function () {
         if (this.current) {
@@ -69,16 +49,5 @@ let SoundManager = {
 
         title = null
         document.getElementById("songTitle").innerHTML = "Click on characters in the mural!";
-
-        // if (this.current == null) {
-        //     this.current = null;
-        //     title = null;
-        //     document.getElementById("songTitle").innerHTML = "Click on characters in the mural!";
-        // } else {
-        //     this.current.stop();
-        //     this.current = null;
-        //     title = null;
-        //     document.getElementById("songTitle").innerHTML = "Click on characters in the mural!";
-        // }
     }
 };
