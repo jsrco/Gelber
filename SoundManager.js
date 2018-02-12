@@ -11,7 +11,6 @@ let SoundManager = {
           src: ['music/mp3/' + id + '.mp3', 'music/webm/' + id + '.webm'],
           autoplay: true,
           html5: true,
-          id: id,
           preload: false
         })
       }
@@ -23,25 +22,31 @@ let SoundManager = {
       this.current = this.howls[id];
       let state = this.current.state();
 
-      if (state === 'loaded') {
+      if (state === 'loaded' && !this.current.playing()) {
+        console.log(this.current.seek())
         this.current.play();
-      } else {
+      } else if (state === 'unloaded') {
         this.current.load();
       }
     },
     startMusic: function (id) {
-        if (this.current && id !== this.current.id) {
-          this.stop();
+        console.log('START MUSIC')
+        if (this.current) {
+          if (this.current !== this.howls[id]) {
+            this.stop();
+          }
         }
 
         this.play(id);
     },
     pause: function () {
+        console.log('PAUSE')
         if (this.current) {
           this.current.pause();
         }
     },
     stop: function () {
+        console.log('STOP')
         if (this.current) {
           this.current.stop();
           this.current = null;
