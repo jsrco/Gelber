@@ -69,14 +69,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
     };
 
     let toggle = true;
-    // document.addEventListener('click', function (e) {
-    //     e = e || windows.event;
-    //     if (toggle === true) {
-    //         events(e);
-    //     } else {
-    //         toggle = true;
-    //     }
-    // });
+    document.addEventListener('click', function (e) {
+        e = e || windows.event;
+        if (toggle === true) {
+            events(e);
+        } else {
+            toggle = true;
+        }
+    });
     document.addEventListener('touchend', function (e) {
         e = e || windows.event;
         events(e);
