@@ -209,6 +209,40 @@ i {
     }
 }
 
+.playingSong {
+    opacity: 0.5;
+    -webkit-animation: playingSong 1s linear infinite;
+    -moz-animation: playingSong 1s linear infinite;
+    -ms-animation: playingSong 1s linear infinite;
+    -o-animation: playingSong 1s linear infinite;
+    animation: playingSong 1s linear infinite;
+}
+
+@keyframes playingSong {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.25;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@-webkit-keyframes playingSong {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.25;
+    }
+    100% {
+        opacity: 0.75;
+    }
+}
+
+
 #banjo {
     top: 66%;
     left: 45%;

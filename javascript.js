@@ -34,7 +34,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
             songTitle.innerHTML = title;
         };
         if (e.target.dataset.audio != undefined) {
+            removeAnimate();
             SoundManager.startMusic(e.target.dataset.audio);
+            animate(e.target);
             title = e.target.dataset.title;
             songTitle.innerHTML = title;
         };
@@ -59,13 +61,27 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
         if (e.target == pause) {
             SoundManager.pause();
+            removeAnimate();
         } else if (e.target == stop) {
             SoundManager.stop();
+            removeAnimate();
         }
     };
 
     let toggleWarning = function (element) {
         element.style.visibility = "hidden";
+    };
+
+    let animate = function (e) {
+        let element = e;
+        element.classList.add("playingSong");
+    };
+    
+    let removeAnimate = function () {
+        let element = document.getElementsByClassName("playingSong");
+        for (let i = 0; i < element.length; i++) {
+            element[i].classList.remove("playingSong");
+        }
     };
 
     let toggle = true;
