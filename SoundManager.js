@@ -29,7 +29,7 @@ let SoundManager = {
             this.current.play();
         } else if (state === 'unloaded') {
             this.current.load();
-            document.getElementById("songStatus").innerHTML = "Loading the song!";
+            document.getElementById("songStatus").innerHTML = "Loading!";
         }
     },
     startMusic: function (id) {
