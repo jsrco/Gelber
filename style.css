@@ -38,7 +38,7 @@ i {
     position: fixed;
     border-radius: 1%;
     top: 15%;
-    width: 65vw;
+    width: 50vw;
     left: 50%;
     transform: translate(-50%, 0%);
     visibility: hidden;
@@ -47,7 +47,8 @@ i {
 }
 
 #picContainer {
-    height: 100vh;
+    height: 100%;
+    max-width: 100%;
     position: absolute;
     top: 0%;
     left: 50%;
