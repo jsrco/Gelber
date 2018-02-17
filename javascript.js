@@ -1,5 +1,4 @@
 // Howler.mobileAutoEnable = false;
-
 document.addEventListener("DOMContentLoaded", function (event) {
     let pos = function () {
         let picCon = document.getElementById("picContainer");
@@ -106,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         events(e);
         toggle = false;
     });
-
     SoundManager.initHowls();
     window.addEventListener("resize", function () {
         pos();

@@ -63,7 +63,9 @@
             let remotePosition = picCon.getBoundingClientRect().left;
             document.getElementById("remote").style.right = remotePosition + "px";
         };
-        pos();
+        picCon.onload() {
+            pos();
+        };
     </script>
 </body>
 
