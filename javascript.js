@@ -1,4 +1,5 @@
 // Howler.mobileAutoEnable = false;
+
 document.addEventListener("DOMContentLoaded", function (event) {
     let title = null;
     let events = function (e) {
@@ -76,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         let element = e;
         element.classList.add("playingSong");
     };
-    
+
     let removeAnimate = function () {
         let element = document.getElementsByClassName("playingSong");
         for (let i = 0; i < element.length; i++) {
@@ -100,4 +101,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
 
     SoundManager.initHowls()
+
+    window.addEventListener("resize", function () {
+        let picCon = document.getElementById("picContainer");
+        let remotePosition = picCon.getBoundingClientRect().left;
+        let position = function () {
+            document.getElementById("remote").style.right = remotePosition + "px";
+        };
+        position();
+    });
 });
