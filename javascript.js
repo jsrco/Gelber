@@ -1,8 +1,8 @@
 // Howler.mobileAutoEnable = false;
 document.addEventListener("DOMContentLoaded", function (event) {
     let pos = function () {
-        let picCon = document.getElementById("picContainer");
-        let remotePosition = picCon.getBoundingClientRect().left;
+        let pic = document.getElementById("bg");
+        let remotePosition = pic.getBoundingClientRect().left;
         document.getElementById("remote").style.right = remotePosition + "px";
     };
     pos();
