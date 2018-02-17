@@ -57,6 +57,14 @@
             <p id="infoText2">If you like our music mural:<br> Venmo @Jesse-Gelber</p>
         </div>
     </div>
+    <script>
+        let pos = function() {
+            let picCon = document.getElementById("picContainer");
+            let remotePosition = picCon.getBoundingClientRect().left;
+            document.getElementById("remote").style.right = remotePosition + "px";
+        };
+        pos();
+    </script>
 </body>
 
 </html>

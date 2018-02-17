@@ -1,6 +1,12 @@
 // Howler.mobileAutoEnable = false;
 
 document.addEventListener("DOMContentLoaded", function (event) {
+    let pos = function () {
+        let picCon = document.getElementById("picContainer");
+        let remotePosition = picCon.getBoundingClientRect().left;
+        document.getElementById("remote").style.right = remotePosition + "px";
+    };
+    pos();
     let title = null;
     let events = function (e) {
         let info = document.getElementById("info");
@@ -71,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     let toggleWarning = function (element) {
         element.style.visibility = "hidden";
+        pos();
     };
 
     let animate = function (e) {
@@ -100,13 +107,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         toggle = false;
     });
 
-    SoundManager.initHowls()
-    let pos = function () {
-        let picCon = document.getElementById("picContainer");
-        let remotePosition = picCon.getBoundingClientRect().left;
-        document.getElementById("remote").style.right = remotePosition + "px";
-    };
-    pos();
+    SoundManager.initHowls();
     window.addEventListener("resize", function () {
         pos();
     });
