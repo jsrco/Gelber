@@ -17,13 +17,13 @@
 </head>
 
 <body>
-    <div id="remote">
-        <a id="pause" class="remoteStyle">Pause</a>
-        <a id="stop" class="remoteStyle">Stop</a>
-        <p id="songTitle" class="remoteStyle">Click on characters in the mural!</p>
-        <p id="songStatus" class="remoteStyle"></p>
-    </div>
     <div id="picContainer">
+        <div id="remote">
+            <a id="pause" class="remoteStyle">Pause</a>
+            <a id="stop" class="remoteStyle">Stop</a>
+            <p id="songTitle" class="remoteStyle">Click on characters in the mural!</p>
+            <p id="songStatus" class="remoteStyle"></p>
+        </div>
         <img id="banjoPic" src="Gelber 14B.gif">
         <img id="bg" src="1.jpg">
         <div id="song10" class="songs" href="#" data-audio="s10" data-title="Jesse James"></div>
@@ -57,16 +57,6 @@
             <p id="infoText2">If you like our music mural:<br> Venmo @Jesse-Gelber</p>
         </div>
     </div>
-    <script>
-        let pos = function() {
-            let pic = document.getElementById("bg");
-            let remotePosition = pic.getBoundingClientRect().left;
-            document.getElementById("remote").style.right = remotePosition + "px";
-        };
-        pic.onload() {
-            pos();
-        };
-    </script>
 </body>
 
 </html>

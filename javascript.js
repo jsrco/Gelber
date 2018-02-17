@@ -1,11 +1,5 @@
 // Howler.mobileAutoEnable = false;
 document.addEventListener("DOMContentLoaded", function (event) {
-    let pos = function () {
-        let pic = document.getElementById("bg");
-        let remotePosition = pic.getBoundingClientRect().left;
-        document.getElementById("remote").style.right = remotePosition + "px";
-    };
-    pos();
     let title = null;
     let events = function (e) {
         let info = document.getElementById("info");
@@ -23,10 +17,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         let banjo = document.getElementById("banjo");
         let banjoPic = document.getElementById("banjoPic");
         let picContainer = document.getElementById("picContainer");
-        let pause = document.getElementById("pause");
-        let stop = document.getElementById("stop");
-        let songTitle = document.getElementById("songTitle");
         let iArrow = document.getElementById("iArrow");
+        let remote = document.getElementById("remote");
         if (information != null && e.target != information && e.target != infoText && e.target != iconBar && e.target != fb && e.target != insta && e.target != pp && e.target != infoText2 && e.target != email && e.target != banjo && e.target != info) {
             information.style.visibility = "hidden";
             banjoPic.style.visibility = "hidden";
@@ -49,9 +41,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         if (e.target === info || e.target === iArrow) {
             picContainer.style.visibility = "hidden";
             information.style.visibility = "visible";
-            pause.style.visibility = "visible";
-            stop.style.visibility = "visible";
-            songTitle.style.visibility = "visible";
+            remote.style.visibility = "visible";
             songTitle.innerHTML = "Click outside the info box to go back!";
         }
         if (e.target === warning || e.target === label || e.target === labelText) {
@@ -60,9 +50,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         if (e.target === banjo) {
             picContainer.style.visibility = "hidden";
             banjoPic.style.visibility = "visible";
-            pause.style.visibility = "visible";
-            stop.style.visibility = "visible";
-            songTitle.style.visibility = "visible";
+            remote.style.visibility = "visible";
             songTitle.innerHTML = "Click anywhere to go back!";
         }
         if (e.target == pause) {
@@ -106,7 +94,4 @@ document.addEventListener("DOMContentLoaded", function (event) {
         toggle = false;
     });
     SoundManager.initHowls();
-    window.addEventListener("resize", function () {
-        pos();
-    });
 });
