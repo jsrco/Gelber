@@ -101,13 +101,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
 
     SoundManager.initHowls()
-
-    window.addEventListener("resize", function () {
+    let pos = function () {
         let picCon = document.getElementById("picContainer");
         let remotePosition = picCon.getBoundingClientRect().left;
-        let position = function () {
-            document.getElementById("remote").style.right = remotePosition + "px";
-        };
-        position();
+        document.getElementById("remote").style.right = remotePosition + "px";
+    };
+    pos();
+    window.addEventListener("resize", function () {
+        pos();
     });
 });
