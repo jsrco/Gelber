@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         let picContainer = document.getElementById("picContainer");
         let iArrow = document.getElementById("iArrow");
         let remote = document.getElementById("remote");
+        let pause = document.getElementById("pause");
+        let stop = document.getElementById("stop");
         if (information != null && e.target != information && e.target != infoText && e.target != iconBar && e.target != fb && e.target != insta && e.target != pp && e.target != infoText2 && e.target != email && e.target != banjo && e.target != info) {
             information.style.visibility = "hidden";
             banjoPic.style.visibility = "hidden";
