@@ -127,8 +127,9 @@ i {
 
 .infoBar {
     position: absolute;
-    border: solid .5vh rgba(255, 1, 1, .95);
-    border-radius: 15%;
+    border: solid .5vh rgba(255, 255, 255, .95);
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 3%;
     -webkit-animation: infoBar 1.5s linear infinite;
     -moz-animation: infoBar 1.5s linear infinite;
     -ms-animation: infoBar 1.5s linear infinite;
@@ -138,75 +139,82 @@ i {
 
 @keyframes infoBar {
     0% {
-        box-shadow: 0 0 75px #ff0101;
-        border: solid .75vh rgba(255, 1, 1, 0.5);
+        box-shadow: 0 0 75px white;
+        border: solid .75vh rgba(255, 255, 255, 0.95);
     }
     50% {
         box-shadow: none;
-        border: solid .5vh rgba(255, 1, 1, 0.25);
+        border: solid .75vh rgba(255, 255, 255, 0.85);
     }
     100% {
-        box-shadow: 0 0 100px #ff0101;
-        border: solid .75vh rgba(255, 1, 1, 0.75);
+        box-shadow: 0 0 100px white;
+        border: solid .75vh rgba(255, 255, 255, 0.95);
     }
 }
 
 @-webkit-keyframes infoBar {
     0% {
-        box-shadow: 0 0 75px #ff0101;
-        border: solid .75vh rgba(255, 1, 1, 0.5);
+        box-shadow: 0 0 75px white;
+        border: solid .75vh rgba(255, 255, 255, 0.95);
     }
     50% {
-        box-shadow: 0 0 0;
-        border: solid .5vh rgba(255, 1, 1, 0.25);
+        box-shadow: none;
+        border: solid .75vh rgba(255, 255, 255, 0.85);
     }
     100% {
-        box-shadow: 0 0 100px #ff0101;
-        border: solid .75vh rgba(255, 1, 1, 0.75);
+        box-shadow: 0 0 100px white;
+        border: solid .75vh rgba(255, 255, 255, 0.95);
     }
 }
 
-#iArrow {
+#infoSign {
     position: absolute;
-    color: rgba(255, 1, 1, .95);
     z-index: 1;
-    top: 54%;
-    left: 85%;
+    top: 56%;
+    left: 84.25%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.55);
+    border: solid .5vh rgba(255, 255, 255, .95);
+    border-radius: 3%;
     -webkit-animation: iArrow 1.5s linear infinite;
     -moz-animation: iArrow 1.5s linear infinite;
     -ms-animation: iArrow 1.5s linear infinite;
     -o-animation: iArrow 1.5s linear infinite;
     animation: iArrow 1.5s linear infinite;
-    font-size: 4vh;
+    font-size: 2vh;
+}
+
+#iArrow {
+    font-size: 3vh;
 }
 
 @keyframes iArrow {
     0% {
-        opacity: 0.75;
-        text-shadow: 0 0 75px #ff0101;
+        opacity: 0.95;
+        text-shadow: 0 0 75px white;
     }
     50% {
-        opacity: 0.5;
-        text-shadow: 0 0 0px #ff0101;
+        opacity: 0.85;
+        text-shadow: 0 0 0px white;
     }
     100% {
         opacity: 0.95;
-        text-shadow: 0 0 100px #ff0101;
+        text-shadow: 0 0 100px white;
     }
 }
 
 @-webkit-keyframes iArrow {
     0% {
-        opacity: 0.75;
-        text-shadow: 0 0 75px #ff0101;
+        opacity: 0.95;
+        text-shadow: 0 0 75px white;
     }
     50% {
-        opacity: 0.5;
-        text-shadow: 0 0 0px #ff0101;
+        opacity: 0.85;
+        text-shadow: 0 0 0px white;
     }
     100% {
         opacity: 0.95;
-        text-shadow: 0 0 100px #ff0101;
+        text-shadow: 0 0 100px white;
     }
 }
 

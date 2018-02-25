@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         let banjoPic = document.getElementById("banjoPic");
         let picContainer = document.getElementById("picContainer");
         let iArrow = document.getElementById("iArrow");
+        let infoSign = document.getElementById("infoSign");
         let remote = document.getElementById("remote");
         let pause = document.getElementById("pause");
         let stop = document.getElementById("stop");
@@ -40,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             title = e.target.dataset.title;
             songTitle.innerHTML = title;
         };
-        if (e.target === info || e.target === iArrow) {
+        if (e.target === info || e.target === iArrow || e.target === infoSign) {
             picContainer.style.visibility = "hidden";
             information.style.visibility = "visible";
             remote.style.visibility = "visible";
