@@ -171,8 +171,9 @@ i {
     position: absolute;
     z-index: 1;
     top: 56%;
-    left: 84.25%;
-    color: white;
+    left: 84%;
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0 0 10px white;
     background-color: rgba(0, 0, 0, 0.55);
     border: solid .5vh rgba(255, 255, 255, .95);
     border-radius: 3%;
@@ -185,35 +186,37 @@ i {
 }
 
 #iArrow {
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0 0 10px white;
     font-size: 3vh;
 }
 
 @keyframes iArrow {
     0% {
-        opacity: 0.95;
+        opacity: 1;
         text-shadow: 0 0 75px white;
     }
     50% {
-        opacity: 0.85;
+        opacity: 1;
         text-shadow: 0 0 0px white;
     }
     100% {
-        opacity: 0.95;
+        opacity: 1;
         text-shadow: 0 0 100px white;
     }
 }
 
 @-webkit-keyframes iArrow {
     0% {
-        opacity: 0.95;
+        opacity: 1;
         text-shadow: 0 0 75px white;
     }
     50% {
-        opacity: 0.85;
+        opacity: 1;
         text-shadow: 0 0 0px white;
     }
     100% {
-        opacity: 0.95;
+        opacity: 1;
         text-shadow: 0 0 100px white;
     }
 }
