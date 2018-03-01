@@ -193,15 +193,16 @@ i {
     0% {
         opacity: 1;
         text-shadow: 0 0 75px white;
+        background-color: rgba(0, 0, 0, .4);
     }
     50% {
         opacity: 1;
         text-shadow: 0 0 0px white;
-        background-color: rgba(0, 0, 0, .5);
     }
     100% {
         opacity: 1;
         text-shadow: 0 0 100px white;
+        background-color: rgba(0, 0, 0, .5);
     }
 }
 
@@ -209,15 +210,16 @@ i {
     0% {
         opacity: 1;
         text-shadow: 0 0 75px white;
+        background-color: rgba(0, 0, 0, .4);
     }
     50% {
         opacity: 1;
         text-shadow: 0 0 0px white;
-        background-color: rgba(0, 0, 0, .5);
     }
     100% {
         opacity: 1;
         text-shadow: 0 0 100px white;
+        background-color: rgba(0, 0, 0, .5);
     }
 }
 
